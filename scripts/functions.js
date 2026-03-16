@@ -31,3 +31,12 @@ function clearAddMoneyInputs() {
     amountInput.value = "";
     pinInput.value = "";
 }
+
+function clearSendMoneyInputs() {
+    const accountInput = document.getElementById("send-money-number");
+    const amountInput = document.getElementById("send-money-amount");
+    const pinInput = document.getElementById("send-money-pin");
+    accountInput.value = "";
+    amountInput.value = "";
+    pinInput.value = "";
+}
