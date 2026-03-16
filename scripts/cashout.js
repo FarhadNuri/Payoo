@@ -1,30 +1,40 @@
-document.getElementById('cashout-btn').addEventListener('click', function(e) {
+document.getElementById("cashout-btn").addEventListener("click", function (e) {
+  const agentNumber = getValueFromInput("cashout-number");
 
-    const agentInput = document.getElementById('cashout-number');
-    const agentNumber = agentInput.value;
+  if (agentNumber.length !== 11) {
+    clearCashoutInputs();
+    alert("Please enter a valid 11 digit agent number.");
     
-    const amountInput = document.getElementById('cashout-amount');
-    const amount = amountInput.value;
-    
-    const pinInput = document.getElementById('cashout-pin');
-    const pin = pinInput.value;
-    
+  }
 
-    const balanceInput = document.getElementById('balance');
-    const balance= balanceInput.innerText;
+  const amount = getValueFromInput("cashout-amount");
+
+  const balance = getBalance();
+
+  const newBalance = Number(balance) - Number(amount);
+
+  if (newBalance < 0) {
+    clearCashoutInputs();
+    alert("Insufficient balance.");
     
+    return;
+  }
 
-    const newBalance = Number(balance) - Number(amount);
-    
+  const pin = getValueFromInput("cashout-pin");
 
-    if(pin === "1234" && newBalance >= 0) {
-        balanceInput.innerText = newBalance;
-        console.log('Cashout successful.');
-    } else {
-        console.log('Cashout failed.');
-    }
-    agentInput.value = '';
-    amountInput.value = '';
-    pinInput.value = '';
+  if (pin === "1234") {
+    setBalance(newBalance);
+    console.log("Cashout successful.");
+    clearCashoutInputs();
+    alert(
+      `Cashout of ${amount} to agent ${agentNumber} successful! Your new balance is ${newBalance}.`,
+    );
+    return;
+  } else {
+    console.log("Cashout failed.");
+    clearCashoutInputs();
+    alert("Invalid PIN. Please try again.");
 
+    return;
+  }
 });
