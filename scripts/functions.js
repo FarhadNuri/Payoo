@@ -51,3 +51,8 @@ function clearPayBillInputs() {
     amountInput.value = "";
     pinInput.value = "";
 }
+
+function clearGetBonusInputs() {
+    const couponInput = document.getElementById("get-bonus-coupon");
+    couponInput.value = "";
+}
