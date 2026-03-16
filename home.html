@@ -83,15 +83,15 @@
                 <div class="card-body">
                     <fieldset class="fieldset">
                         <label class="label font-bold text-neutral">Select A Bank</label>
-                        <select class="select mb-3 w-full rounded-full bg-base-200">
-                            <option disabled selected>Select Bank</option>
+                        <select id="bank" class="select mb-3 w-full rounded-full bg-base-200">
+                            <option value="" disabled selected>Select Bank</option>
                             <option>DBBL</option>
                             <option>FSIB</option>
                             <option>UCB</option>
                             <option>HSBC</option>
                         </select>
                         <label class="label font-bold text-neutral">Bank Account Number</label>
-                        <input id="account-number" type="text" maxlength="11" minlength="11" required
+                        <input id="account-number" type="number" maxlength="11" minlength="11" required
                             class="input rounded-full bg-base-200 mb-3 w-full"
                             placeholder="Enter 11 Digit Account Number" />
                         <label class="label font-bold text-neutral">Amount To Add</label>
@@ -130,6 +130,7 @@
     </section>
     <script src="scripts/cashout.js"></script>
     <script src="scripts/functions.js"></script>
+    <script src="scripts/addMoney.js"></script>
 </body>
 
 </html>

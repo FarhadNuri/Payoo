@@ -20,3 +20,14 @@ function clearCashoutInputs() {
     amountInput.value = "";
     pinInput.value = "";
 }
+
+function clearAddMoneyInputs() {
+    
+    const accountInput = document.getElementById("account-number");
+    const amountInput = document.getElementById("add-money-amount");
+    const pinInput = document.getElementById("add-money-pin");
+    
+    accountInput.value = "";
+    amountInput.value = "";
+    pinInput.value = "";
+}
