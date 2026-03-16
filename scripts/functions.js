@@ -40,3 +40,14 @@ function clearSendMoneyInputs() {
     amountInput.value = "";
     pinInput.value = "";
 }
+
+function clearPayBillInputs() {
+    const billInput = document.getElementById("bill");
+    const accountInput = document.getElementById("pay-bill-account-number");
+    const amountInput = document.getElementById("pay-bill-amount");
+    const pinInput = document.getElementById("pay-bill-pin");
+    billInput.value = "";
+    accountInput.value = "";
+    amountInput.value = "";
+    pinInput.value = "";
+}
