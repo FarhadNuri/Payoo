@@ -9,7 +9,7 @@ document.getElementById('login-btn').addEventListener('click', function(e) {
         
         mobileInput.value = '';
         pinInput.value = '';
-        window.location.replace('/home.html');
+        window.location.replace('./home.html');
     } else {
         alert('Invalid mobile number or PIN. Please try again.');
     }
