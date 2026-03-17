@@ -14,6 +14,17 @@ document
       alert(
         `Successfully redeemed ${amount} from your coupon! Your new balance is ${newBalance}.`,
       );
+      const transactionContainer = document.getElementById(
+        "transaction-container",
+      );
+      const transactionCard = document.createElement("div");
+      transactionCard.classList.add("transaction-card", "p-5", "bg-base-100");
+      transactionCard.innerHTML = `
+          <p><strong>Added ${amount} from bonus coupon</strong></p>
+          <p>New Balance: ${newBalance}</p>
+        `;
+      transactionContainer.append(transactionCard);
+      return;
     } else {
       console.log("Get bonus failed.");
       clearGetBonusInputs();

@@ -4,7 +4,6 @@ document.getElementById("cashout-btn").addEventListener("click", function (e) {
   if (agentNumber.length !== 11) {
     clearCashoutInputs();
     alert("Please enter a valid 11 digit agent number.");
-    
   }
 
   const amount = getValueFromInput("cashout-amount");
@@ -16,7 +15,7 @@ document.getElementById("cashout-btn").addEventListener("click", function (e) {
   if (newBalance < 0) {
     clearCashoutInputs();
     alert("Insufficient balance.");
-    
+
     return;
   }
 
@@ -29,6 +28,16 @@ document.getElementById("cashout-btn").addEventListener("click", function (e) {
     alert(
       `Cashout of ${amount} to agent ${agentNumber} successful! Your new balance is ${newBalance}.`,
     );
+    const transactionContainer = document.getElementById(
+      "transaction-container",
+    );
+    const transactionCard = document.createElement("div");
+    transactionCard.classList.add("transaction-card", "p-5", "bg-base-100");
+    transactionCard.innerHTML = `
+          <p><strong>Cashout of ${amount} to agent ${agentNumber}</strong></p>
+          <p>New Balance: ${newBalance}</p>
+        `;
+    transactionContainer.append(transactionCard);
     return;
   } else {
     console.log("Cashout failed.");

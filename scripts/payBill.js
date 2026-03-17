@@ -29,6 +29,18 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
     alert(
       `Successfully paid ${amount} for ${bill}! Your new balance is ${newBalance}.`,
     );
+    const transactionContainer = document.getElementById(
+      "transaction-container",
+    );
+    const transactionCard = document.createElement("div");
+    transactionCard.classList.add("transaction-card", "p-5", "bg-base-100");
+    transactionCard.innerHTML = `
+          <p><strong>Pay Bill of ${amount} for ${bill}</strong></p>
+          <p>Account Number: ${accountNumber}</p>
+          <p>New Balance: ${newBalance}</p>
+        `;
+    transactionContainer.append(transactionCard);
+    return;
   } else {
     console.log("Pay bill failed.");
 

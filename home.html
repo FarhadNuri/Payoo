@@ -47,27 +47,33 @@
         <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and
             transactions are fast.</p>
         <div class="buttons grid grid-cols-3 gap-3">
-            <button class="btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
+            <button onclick="showSection('add-money')" data-section="add-money"
+                class="feature-btn btn btn-primary h-full py-4 rounded-xl btn-active flex-col">
                 <img src="assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </button>
-            <button class="btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
+            <button onclick="showSection('cashout')" data-section="cashout"
+                class="feature-btn btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
                 <img src="assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </button>
-            <button class="btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
+            <button onclick="showSection('send-money')" data-section="send-money"
+                class="feature-btn btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
                 <img src="assets/opt-3.png" alt="">
                 <p>Send Money</p>
             </button>
-            <button class="btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
+            <button onclick="showSection('get-bonus')" data-section="get-bonus"
+                class="feature-btn btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
                 <img src="assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
-            <button class="btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
+            <button onclick="showSection('pay-bill')" data-section="pay-bill"
+                class="feature-btn btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
                 <img src="assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
-            <button class="btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
+            <button onclick="showSection('transactions')" data-section="transactions"
+                class="feature-btn btn btn-primary h-full py-4 rounded-xl btn-soft flex-col">
                 <img src="assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </button>
@@ -76,7 +82,7 @@
 
     </section>
 
-    <section id="add-money" class="w-11/12 mx-auto pb-20 hidden">
+    <section id="add-money" class="w-11/12 mx-auto pb-20 ">
         <h2 class="text-xl font-bold">Add Money</h2>
         <div class="form pt-3">
             <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
@@ -129,7 +135,7 @@
         </div>
     </section>
 
-    <section id="send-money" class="w-11/12 mx-auto pb-20 hidden ">
+    <section id="send-money" class="w-11/12 mx-auto pb-20 hidden">
         <h2 class="text-xl font-bold">Send Money</h2>
         <div class="form pt-3">
             <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
@@ -151,7 +157,7 @@
         </div>
     </section>
 
-    <section id="pay-bill" class="w-11/12 mx-auto pb-20 hidden ">
+    <section id="pay-bill" class="w-11/12 mx-auto pb-20 hidden">
         <h2 class="text-xl font-bold">Pay Bill</h2>
         <div class="form pt-3">
             <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
@@ -160,10 +166,10 @@
                         <label class="label font-bold text-neutral">Select To Pay</label>
                         <select id="bill" class="select mb-3 w-full rounded-full bg-base-200">
                             <option value="" disabled selected>Select Bill</option>
-                            <option>Internet</option> 
+                            <option>Internet</option>
                             <option>Electricity</option>
                             <option>Mobile</option>
-                            
+
                         </select>
                         <label class="label font-bold text-neutral">Biller Account Number</label>
                         <input id="pay-bill-account-number" type="number" maxlength="11" minlength="11" required
@@ -182,19 +188,31 @@
         </div>
     </section>
 
-    <section id="get-bonus" class="w-11/12 mx-auto pb-20  ">
+    <section id="get-bonus" class="w-11/12 mx-auto pb-20 hidden">
         <h2 class="text-xl font-bold">Get Bonus</h2>
         <div class="form pt-3">
             <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
                 <div class="card-body">
                     <fieldset class="fieldset">
                         <label class="label font-bold text-neutral">Enter Bonus Coupon</label>
-                        <input id="get-bonus-coupon" type="text" class="input rounded-full bg-base-200  w-full" placeholder="Enter Bonus Coupon" />
-                       
+                        <input id="get-bonus-coupon" type="text" class="input rounded-full bg-base-200  w-full"
+                            placeholder="Enter Bonus Coupon" />
+
                         <button id="get-bonus-btn" class="btn btn-primary mt-4 rounded-full">Get Bonus</button>
                     </fieldset>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="transactions" class="w-11/12 mx-auto pb-20 hidden">
+
+        <h2 class="text-xl font-bold">Transactions</h2>
+        <div class="space-y-5" id="transaction-container">
+            <div class="transaction-card bg-base-100">
+
+            </div>
+
         </div>
     </section>
 
